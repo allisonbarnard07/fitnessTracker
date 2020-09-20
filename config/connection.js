@@ -7,7 +7,9 @@ const dbConfig = process.env.MONGODB_URI;
 async function connectDB(){
   await mongoose.connect(dbConfig,{
       useNewUrlParser: true,
-      useUnifiedTopology: true  
+      useUnifiedTopology: true,  
+      useCreateIndex: true,
+      useFindAndModify: false,
   }, () =>  
   console.log("Connected to DB")
 );
